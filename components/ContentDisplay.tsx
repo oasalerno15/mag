@@ -1986,7 +1986,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
         <div className="w-full h-48 relative overflow-hidden border-b-4 border-gray-300">
           <Image
             src="/mind.png"
-            alt="Alzheimer header"
+            alt="Alzheimer's header"
             fill
             className="object-cover object-center"
             priority
@@ -1998,7 +1998,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
           {/* Title Section - Centered */}
           <div className="text-center mb-8">
             <h2 className="text-6xl font-bold text-black mb-4" style={{ fontFamily: "Georgia, serif" }}>
-              Alzheimer
+              Alzheimer's
             </h2>
             <p className="text-xl text-gray-600 italic">
               by Bennett Choi
@@ -2143,37 +2143,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
         {/* Youth Section Stories */}
         {activeSection === "youth" && (
           <>
-        {/* Story Card 1 - Before Contact */}
-        <div 
-          className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl mb-12"
-          onClick={() => setShowStory("beforeContact")}
-        >
-          {/* Cover Image */}
-          <div className="flex-shrink-0 w-48 h-64 border-2 border-gray-400 overflow-hidden bg-white shadow-lg">
-            <Image
-              src="/ranch.png"
-              alt="Before Contact cover"
-              width={192}
-              height={256}
-              className="object-cover w-full h-full"
-            />
-          </div>
-
-          {/* Story Info - Harvard Style Layout */}
-          <div className="flex-1">
-            <h3 className="text-3xl font-bold text-black mb-2">
-              Before Contact
-            </h3>
-            <p className="text-xl italic text-gray-600 mb-4">
-              by Julian Kang
-            </p>
-            <p className="text-base text-gray-600 leading-relaxed">
-              A story of youth, escape, and the longing for something beyond the fences of suburban Massachusetts
-            </p>
-          </div>
-        </div>
-
-        {/* Story Card 2 - Birch Street */}
+        {/* Story Card 1 - Birch Street */}
         <div 
           className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl mb-12"
           onClick={() => { setShowStory("birchStreet"); setCurrentPage(1); }}
@@ -2199,6 +2169,36 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
             </p>
             <p className="text-base text-gray-600 leading-relaxed">
               A somber tale of loss, isolation, and the quiet tragedy of a life lived in the shadows
+            </p>
+          </div>
+        </div>
+
+        {/* Story Card 2 - Before Contact */}
+        <div 
+          className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl mb-12"
+          onClick={() => setShowStory("beforeContact")}
+        >
+          {/* Cover Image */}
+          <div className="flex-shrink-0 w-48 h-64 border-2 border-gray-400 overflow-hidden bg-white shadow-lg">
+            <Image
+              src="/ranch.png"
+              alt="Before Contact cover"
+              width={192}
+              height={256}
+              className="object-cover w-full h-full"
+            />
+          </div>
+
+          {/* Story Info - Harvard Style Layout */}
+          <div className="flex-1">
+            <h3 className="text-3xl font-bold text-black mb-2">
+              Before Contact
+            </h3>
+            <p className="text-xl italic text-gray-600 mb-4">
+              by Julian Kang
+            </p>
+            <p className="text-base text-gray-600 leading-relaxed">
+              A story of youth, escape, and the longing for something beyond the fences of suburban Massachusetts
             </p>
           </div>
         </div>
@@ -2638,7 +2638,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
           </div>
         </div>
 
-        {/* Story Card 3 - Alzheimer */}
+        {/* Story Card 3 - Alzheimer's */}
         <div 
           className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl mb-12"
           onClick={() => setShowStory("alzheimer")}
@@ -2647,7 +2647,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
           <div className="flex-shrink-0 w-48 h-64 border-2 border-gray-400 overflow-hidden bg-white shadow-lg">
             <Image
               src="/mind.png"
-              alt="Alzheimer cover"
+              alt="Alzheimer's cover"
               width={192}
               height={256}
               className="object-cover w-full h-full"
@@ -2657,7 +2657,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
           {/* Story Info */}
           <div className="flex-1">
             <h3 className="text-3xl font-bold text-black mb-2">
-              Alzheimer
+              Alzheimer's
             </h3>
             <p className="text-xl italic text-gray-600 mb-4">
               by Bennett Choi
