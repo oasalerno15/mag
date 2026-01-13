@@ -590,32 +590,55 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
               by Wil Davis
             </p>
 
-            {/* Story Text */}
-            <div className="text-gray-900 text-base leading-relaxed space-y-4" style={{ fontFamily: "Georgia, serif" }}>
-              <p>
-                My dad was a big dude. He always had a coldy in one hand, chew in the other, and a temper that no one could silence. I inherited more of his traits than I wanted: his size, his anger, his instinct to fight. When I was little, my dad signed me up for hockey, thinking it would "turn me into a man." It did, just not in the way he imagined.
-              </p>
+            {/* Story Text - Page 1 */}
+            {currentPage === 1 && (
+              <div className="text-gray-900 text-base leading-relaxed space-y-4" style={{ fontFamily: "Georgia, serif" }}>
+                <p>
+                  My dad was a big dude. He always had a coldy in one hand, chew in the other, and a temper that no one could silence out. I inherited his traits more than I wanted: his size, his anger, his instinct to fight. When I was little, my dad signed me up for hockey, thinking it would "turn me into a man." It did, just not in the way he imagined. On the ice, I used my size to my advantage. No one messed with me, and if they did, they didn't twice.
+                </p>
+              </div>
+            )}
 
-              <p>
-                We had a game tonight. I listened to my heavy metal playlist, eyes locked in place, in my dad's 2003 Chevy Silverado. It was game time. On the ice, I used my size to my advantage. I played my usual game: big hits, chirps every chance I could get, intimidation. But this time, it didn't work. I stomped back to the locker room after a hard-fought 4-3 loss. The ref was fuckin terrible. His blind ass put me in the box for nothin. Before I could slam my shoulder into the locker room door, behind me, someone shouted: "Keep walkin', burger!" The words hit harder than any check I've taken. My mom always told me I was "big-boned," but deep down, I hated the way I looked. Hearing that for the first time—in front of everyone— shattered me. For the first time in my life, I had chosen to turn down a fight. I didn't turn around and sock this asswipe. I didn't flinch; I was hurt.
-              </p>
+            {/* Story Text - Page 2 */}
+            {currentPage === 2 && (
+              <div className="text-gray-900 text-base leading-relaxed space-y-4" style={{ fontFamily: "Georgia, serif" }}>
+                <p>
+                  We had a game tonight. I listened to my heavy metal playlist, eyes locked in place, in my dad's 2003 Chevy Silverado. It was game time. I played my usual game: big hits, chirps every chance I could get, intimidation. But this time, it didn't work. I stomped back to the locker room after a hard-fought 4-3 loss. The ref was fuckin terrible. His blind ass put me in the box for nothin. Before I could slam my shoulder into the locker room door, behind me, someone shouted: "Keep walkin', burger!" The words hit harder than any check I've taken. My mom always told me I was "big-boned," but deep down, I hated the way I looked. Hearing that for the first time—in front of everyone— shattered me. For the first time in my life, I had chosen to turn down a fight. I didn't turn around and sock this asswipe. I didn't flinch; I was hurt. I just kept walking, lowering my shoulder into the door like I always do.
+                </p>
 
-              <p>
-                I just kept walking, lowering my shoulder into the door like I always do.
-              </p>
+                <p>
+                  I thought hockey would make me tough, just as my dad intended, but in that moment, I realized how fragile I actually am. One simple chirp ruined me. I couldn't inflict the same pain I had just felt on someone else, so I said to myself: "This isn't me." From then on, I changed my game. I played calmer and cleaner, while remembering to respect each and every player. That one insult turned me from a bully into a teammate.
+                </p>
+              </div>
+            )}
 
-              <p>
-                I thought hockey would make me tough, just as my dad intended, but in that moment, I realized how fragile I actually am. One simple chirp ruined me. I couldn't inflict the same pain I had just felt on someone else, so I said to myself, "This isn't me." From then on, I changed my game. I played calmer and cleaner, while remembering to respect every player. That one insult turned me from a bully into a teammate.
-              </p>
+            {/* Pagination Controls */}
+            <div className="flex gap-4 mt-8">
+              {currentPage > 1 && (
+                <button
+                  onClick={() => setCurrentPage(currentPage - 1)}
+                  className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded hover:bg-gray-800 transition-all"
+                >
+                  ← PREVIOUS
+                </button>
+              )}
+              {currentPage < 2 && (
+                <button
+                  onClick={() => setCurrentPage(currentPage + 1)}
+                  className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded hover:bg-gray-800 transition-all"
+                >
+                  NEXT →
+                </button>
+              )}
+              {currentPage === 2 && (
+                <button
+                  onClick={() => setShowStory(null)}
+                  className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded hover:bg-gray-800 transition-all"
+                >
+                  ← BACK TO MAGAZINE
+                </button>
+              )}
             </div>
-
-            {/* Back Button */}
-            <button
-              onClick={() => setShowStory(null)}
-              className="mt-8 px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded hover:bg-gray-800 transition-all"
-            >
-              ← BACK TO MAGAZINE
-            </button>
           </div>
         </div>
       </motion.div>
@@ -2456,7 +2479,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
         {/* Story Card 1 - The Hidden Details */}
         <div 
           className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl mb-12"
-          onClick={() => setShowStory("hiddenDetails")}
+          onClick={() => { setShowStory("hiddenDetails"); setCurrentPage(1); }}
         >
           {/* Cover Image */}
           <div className="flex-shrink-0 w-48 h-64 border-2 border-gray-400 overflow-hidden bg-white shadow-lg">
