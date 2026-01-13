@@ -792,6 +792,110 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
     );
   }
 
+  if (showStory === "extractsFromLife") {
+    return (
+      <motion.div
+        className="min-h-screen bg-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Header Image */}
+        <div className="w-full h-48 relative overflow-hidden border-b-4 border-gray-300">
+          <Image
+            src="/dude.png"
+            alt="Extracts From a Life header"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+
+        {/* Story Container - Harvard Lampoon Style */}
+        <div className="max-w-4xl mx-auto px-8 py-12">
+          {/* Title Section - Centered */}
+          <div className="text-center mb-8">
+            <h2 className="text-6xl font-bold text-black mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              Extracts From a Life
+            </h2>
+            <p className="text-xl text-gray-600 italic">
+              by Wil Davis
+            </p>
+          </div>
+
+          {/* Story Text - Clean Essay Format */}
+          <div className="text-black text-lg leading-relaxed space-y-8 max-w-3xl mx-auto" style={{ fontFamily: "Georgia, serif" }}>
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Childhood</h3>
+              <p>
+                He grew up in a house where noise was constant. It consisted of five sisters arguing, singing, or crying. The sound of slap shots blended in with the chaos in the house. Sometimes he sneaked outside to rip some pucks, only to lose them in the neighbor's tall bush dividing our houses. He learned that quiet was very rare. It was usual for him. It honestly comforted him.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Hockey</h3>
+              <p>
+                He loved the cold more than anything. The smell of the rink's dry air stuck with him. The sound of his blades digging through the cold ice was worth the one-and-a-half-hour drive to bumb fuck New Jersey (as his mom would say). Every bruise was a symbol of effort and demonstrated disciplined attendance, showing up even when his mom hated spending her Tuesday and Thursday nights at the rink instead of doing her work.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Sisters</h3>
+              <p>
+                He was excited that they would make him look like a tough hockey player with a black eye, but no, he cried because they made him look like a princess instead. They mocked his hair and took his sweatshirts, which barely fit them. The repetitive fighting for the slightest piece of attention stuck with him. But these weren't bad things; they may have made fun of him, done his makeup unwillingly, and stolen his clothes, but deep down, it was a sign that they had his back.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Pipeline</h3>
+              <p>
+                The annual trip to see his grandparents for the holidays was always his favorite time of the year. It wasn't the warm smell of tropical flowers and thick fresh air; it was the waves. His mom would designate one or two days of the trip to go down to the North Shore, the surfing capital of the world. He saw a crowd, screaming the familiar name Jamie O'Brien. A man dropping down a 30-foot mountain of a wave caught this kid with lit-up eyes. From that instant, he wanted to be Jamie. His mom then rounded up the crazy kids that were still on a sugar rush from our annual trip to Monsumoto's Shaved Ice. Driving home, as he fought his sisters for the charger, watching as many Jamie O'Brien videos as he could for the one-and-a-half-hour drive back to Waikiki. He was inspired.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Dreams</h3>
+              <p>
+                Although hockey was his everything, when he was little, he wanted to be just like his dad. Wearing a clean navy suit, shiny black shoes, and a briefcase that looked straight out of the movies. Not knowing what his dad was doing, but interested, he always watched him work from home, constantly staring at the neon green and orange lines and charts on his laptop. Success was always shooting a puck into the net for your team, but to that day, it looked like his dad's tie.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-3">School</h3>
+              <p>
+                In the classroom, he was wild. Not aware of his severe ADHD, his elementary teachers would constantly write home. His teachers said I needed to get my act together, but in reality, he thought they just couldn't understand the way his mind worked. His dad convinced him that school meant everything, and if he didn't get his grades up, he would be working the burger joint across the street.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Injuries</h3>
+              <p>
+                Becoming an older hockey player came with many consequences. Breaking his shoulder wasn't the brightest part of his life, but it gave him the most powerful lesson he could learn. Watching his teammates play without him for six months angered him. But it only angered him to push harder when he was healthy. After almost a year of watching from the stands, his doctor cleared him to play. Showing up to every practice an hour early to warm up and listening to music that made his eyes pop out of his skull drove him to success. Being consistent with his physical therapy was tough, but it only made him tougher. A disciplined teenager was born from a season-ending injury. He would now take on the world, breaking through any obstacle in the way.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-3">College Applications</h3>
+              <p>
+                Time flies. All of a sudden, he was almost 18. He wrote essays late at night with a hot black coffee next to him at all times. The glow of his laptop in his tiny dark room at midnight felt like rink lights in a dark arena. He wrote about discipline, not talent. The gym lights flicker on at 8:00 AM, but he is already sweating profusely. He wrote about falling again and again, but getting back up every time. His essays weren't fancy; they were honest. They reassembled effort and authenticity. His essays showed something built inside of him that his grades couldn't show. When he submitted them, the calming feeling of hearing the buzzer of a hard-fought victory felt identical.
+              </p>
+            </div>
+          </div>
+
+          {/* Back Button - Clean Style */}
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setShowStory(null)}
+              className="px-6 py-3 bg-black text-white text-sm font-bold rounded hover:bg-gray-800 transition-all"
+            >
+              ← BACK TO MAGAZINE
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
   if (showStory === "lettersToJavier") {
     return (
       <motion.div
@@ -2568,7 +2672,7 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
 
         {/* Story Card 4 - The Artist on Wall Street */}
         <div 
-          className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl"
+          className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl mb-12"
           onClick={() => setShowStory("artistWallStreet")}
         >
           {/* Cover Image */}
@@ -2592,6 +2696,36 @@ export default function ContentDisplay({ activeSection }: ContentDisplayProps) {
             </p>
             <p className="text-base text-gray-600 leading-relaxed">
               A Goldman Sachs analyst transforms cold numbers into art, discovering a new way to tell stories
+            </p>
+          </div>
+        </div>
+
+        {/* Story Card 5 - Extracts From a Life */}
+        <div 
+          className="flex gap-6 cursor-pointer hover:opacity-70 transition-opacity max-w-4xl"
+          onClick={() => setShowStory("extractsFromLife")}
+        >
+          {/* Cover Image */}
+          <div className="flex-shrink-0 w-48 h-64 border-2 border-gray-400 overflow-hidden bg-white shadow-lg">
+            <Image
+              src="/dude.png"
+              alt="Extracts From a Life cover"
+              width={192}
+              height={256}
+              className="object-cover w-full h-full"
+            />
+          </div>
+
+          {/* Story Info */}
+          <div className="flex-1">
+            <h3 className="text-3xl font-bold text-black mb-2">
+              Extracts From a Life
+            </h3>
+            <p className="text-xl italic text-gray-600 mb-4">
+              by Wil Davis
+            </p>
+            <p className="text-base text-gray-600 leading-relaxed">
+              Snapshots of a young man's journey—from rink to reef, from injury to insight, discovering discipline through living
             </p>
           </div>
         </div>
